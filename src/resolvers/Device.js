@@ -207,6 +207,9 @@ const Device = {
       async domainFirewall () {
         const status = await Security.domainFirewall(root, args, context)
         return securityToDeviceStatus(status)
+      },
+      async helloStatus (root, args, context) {
+        return OFF
       }
     }
   },

@@ -82,6 +82,7 @@ type SecurityInfo {
   privateFirewall: FeatureState
   # Windows
   domainFirewall: FeatureState
+  helloStatus: FeatureState
 }
 #
 # type Application {
@@ -146,6 +147,7 @@ input DevicePolicy {
   stethoscopeVersion: Semver
   # [WINDOWS ONLY] optional maximum screenlock timeout (in seconds)
   windowsMaxScreenLockTimeout: Int
+  helloPolicy: RequirementOption
 }
 
 # Defines a requirement for an installed application
@@ -186,6 +188,7 @@ type PolicyResult {
   applications: [ApplicationFeatureState]
   # stethoscope is up-to-date
   stethoscopeVersion: FeatureState
+  helloPolicy: FeatureState
 }
 
 type Security {
@@ -207,6 +210,7 @@ type Security {
   publicFirewall(requirement: RequirementOption!): Boolean!
   privateFirewall(requirement: RequirementOption!): Boolean!
   domainFirewall(requirement: RequirementOption!): Boolean!
+  helloPolicy(requirement: RequirementOption!): Boolean!
 }
 
 type IpAddress {

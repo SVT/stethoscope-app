@@ -251,3 +251,30 @@ practices:
 
       win32: |
         See the following requirements:
+
+  helloPolicy:
+    title: >
+      {{#if passing}}
+        Your Hello is enabled
+      {{else}}
+        Your Hello should be enabled
+      {{/if}}
+    description: >
+      Hello control network traffic into and out of a system. Enabling the firewall on your device can prevent network-based attacks on your system, and is especially important if you make use of insecure wireless networks (such as at coffee shops and airports).
+    directions:
+      darwin: |
+        1. Choose System Preferences from the Apple menu.
+        1. Click [Security or Security & Privacy](x-apple.systempreferences:com.apple.preference.security).
+        1. Click the [Firewall](x-apple.systempreferences:com.apple.preference.security?Firewall) tab.
+        1. Unlock the pane by clicking the lock in the lower-left corner and enter the administrator username and password.
+        1. Click "Turn On Firewall" or "Start" to enable the firewall.
+        1. Click Advanced to customize the firewall configuration.
+
+      win32: |
+        1. Open [Windows Firewall Settings](ps://wf.msc)
+        1. Click "Windows Defender Firewall Properties" in the center pane
+        1. Ensure "Firewall state" is set to "On (recommended)" on the Domain, Public, and Private Profile tabs
+        1. Click OK
+      linux: |
+        1. Open a terminal.
+        1. Enter the command: "sudo ufw enable".

@@ -142,6 +142,10 @@ export default {
     return UNSUPPORTED
   },
 
+  async helloPolicy (root, args, context) {
+    return true
+  },
+
   async applications (root, args, context) {
     if ('applications' in PlatformSecurity) {
       const results = await PlatformSecurity.applications(root, args, context)

@@ -66,6 +66,7 @@ export default class Stethoscope {
           automaticUpdates
           remoteLogin
           stethoscopeVersion
+          helloPolicy
 
           applications {
             name
